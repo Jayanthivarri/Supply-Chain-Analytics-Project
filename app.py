@@ -17,7 +17,7 @@ st.set_page_config(
     page_icon="📦"
 )
 
-df=pd.read_csv("APL_LOGISTICS.csv",encoding="latin1")
+df=pd.read_csv("APL_Logistics.csv",encoding="latin1")
 model=joblib.load("late_delivery_model.pkl")
 
 # create new columns
