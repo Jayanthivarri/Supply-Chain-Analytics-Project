@@ -18,7 +18,12 @@ st.set_page_config(
 )
 
 df=pd.read_csv("APL_Logistics.csv",encoding="latin1")
+<<<<<<< HEAD
 model=joblib.load("late_delivery_model.pkl")
+=======
+model=joblib.load("late_delivery_model_1.pkl")
+
+>>>>>>> 9a7f02c ( Add commit)
 
 # create new columns
 df["delay_gap"] = df["Days for shipping (real)"] - df["Days for shipment (scheduled)"]
@@ -32,7 +37,13 @@ def status(x):
         return "Early"
 
 df["delivery_result"] = df["delay_gap"].apply(status)
-
+#from sklearn.model_selection import train_test_split
+#from sklearn.ensemble import RandomForestClassifier
+#X=df[["Days for shipping (real)","Days for shipment (scheduled)","delay_gap"]]
+#y=df["Late_delivery_risk"]
+#X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.2)
+#model=RandomForestClassifier()
+#model.fit(X_train,y_train)
 #  SIDEBAR
 st.sidebar.title("📌 Logistics Configuration")
 
